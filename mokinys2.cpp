@@ -334,62 +334,154 @@ void Mokinys :: Rikiavimas(deque<Mokinys> &Mokslinciai, deque<Mokinys> &Nuskriau
     else
         throw runtime_error("Netinkama ivestis!");
 }
-void testConstructor(){
+void testConstructor()
+{
     deque<int> temp{1, 2, 3, 4};
     Mokinys mok("Vardenis", "Pavardenis", temp, 9, 8, 7);
-    assert(mok.getVardas() == "Vardenis");
-    assert(mok.getPavarde() == "Pavardenis");
-    assert(mok.getND() == temp);
-    assert(mok.getEgzaminas() == 9);
-    assert(mok.getVID() == 8);
-    assert(mok.getMED() == 7);
-    cout << "Konstruktoriaus testavimas sekmingas!"<<endl;
+    if (mok.getVardas() == "Vardenis")
+        cout << "Vardas tinkamas!" << endl;
+    else
+        cout << "Vardas netinkamas!" << endl;
+    if (mok.getPavarde() == "Pavardenis")
+        cout << "Pavarde tinkama!" << endl;
+    else
+        cout << "Pavarde netinkama!" << endl;
+    if (mok.getND() == temp)
+        cout << "Namu darbai tinkami!" << endl;
+    else
+        cout << "Namu darbai netinkami!" << endl;
+    if (mok.getEgzaminas() == 9)
+        cout << "Egzaminas tinkamas!" << endl;
+    else
+        cout << "Egzaminas netinkamas!" << endl;
+    if (mok.getVID() == 8)
+        cout << "Vidurkis tinkamas!" << endl;
+    else
+        cout << "Vidurkis netinkamas!" << endl;
+    if (mok.getMED() == 7)
+        cout << "Mediana tinkama!" << endl;
+    else
+        cout << "Mediana netinkama!" << endl;
 }
-void testCopyConstructor(){
+void testCopyConstructor()
+{
     deque<int> temp{1, 2, 3, 4};
     Mokinys mok("Vardenis", "Pavardenis", temp, 9, 8, 7);
-    Mokinys mok1=mok;
-    assert(mok.getVardas() == "Vardenis");
-    assert(mok.getPavarde() == "Pavardenis");
-    assert(mok.getND() == temp);
-    assert(mok.getEgzaminas() == 9);
-    assert(mok.getVID() == 8);
-    assert(mok.getMED() == 7);
-    cout << "Copy konstruktoriaus testavimas sekmingas!"<<endl;
+    Mokinys mok1 = mok;
+    if (mok1.getVardas() == "Vardenis")
+        cout << "Vardas tinkamas!" << endl;
+    else
+        cout << "Vardas netinkamas!" << endl;
+    if (mok1.getPavarde() == "Pavardenis")
+        cout << "Pavarde tinkama!" << endl;
+    else
+        cout << "Pavarde netinkama!" << endl;
+    if (mok1.getND() == temp)
+        cout << "Namu darbai tinkami!" << endl;
+    else
+        cout << "Namu darbai netinkami!" << endl;
+    if (mok1.getEgzaminas() == 9)
+        cout << "Egzaminas tinkamas!"<< endl;
+    else
+        cout << "Egzaminas netinkamas!" << endl;
+    if (mok1.getVID() == 8)
+        cout << "Vidurkis tinkamas!" << endl;
+    else
+        cout << "Vidurkis netinkamas!" << endl;
+    if (mok1.getMED() == 7)
+        cout << "Mediana tinkama!" << endl;
+    else
+        cout << "Mediana netinkama!" << endl;
 }
-void testMoveConstructor(){
+void testMoveConstructor()
+{
     deque<int> temp{1, 2, 3, 4};
     Mokinys mok("Vardenis", "Pavardenis", temp, 9, 8, 7);
-    Mokinys mok1=move(mok);
-    assert(mok1.getVardas() == "Vardenis");
-    assert(mok1.getPavarde() == "Pavardenis");
-    assert(mok1.getND() == temp);
-    assert(mok1.getEgzaminas() == 9);
-    assert(mok1.getVID() == 8);
-    assert(mok1.getMED() == 7);
-    cout << "Move konstruktoriaus testavimas sekmingas!"<<endl;
+    Mokinys mok1 = move(mok);
+    if (mok1.getVardas() == "Vardenis")
+        cout << "Vardas tinkamas!" << endl;
+    else
+        cout << "Vardas netinkamas!" << endl;
+    if (mok1.getPavarde() == "Pavardenis")
+        cout << "Pavarde tinkama!" << endl;
+    else
+        cout << "Pavarde netinkama!" << endl;
+    if (mok1.getND() == temp)
+        cout << "Namu darbai tinkami!" << endl;
+    else
+        cout << "Namu darbai netinkami!" << endl;
+    if (mok1.getEgzaminas() == 9)
+        cout << "Egzaminas tinkamas!" << endl;
+    else
+        cout << "Egzaminas netinkamas!" << endl;
+    if (mok1.getVID() == 8)
+        cout << "Vidurkis tinkamas!" << endl;
+    else
+        cout << "Vidurkis netinkamas!" << endl;
+    if (mok1.getMED() == 7)
+        cout << "Mediana tinkama!" << endl;
+    else
+        cout << "Mediana netinkama!" << endl;
 }
-void testCopyAssignment(){
+void testCopyAssignment()
+{
     deque<int> temp{1, 2, 3, 4};
     Mokinys mok("Vardenis", "Pavardenis", temp, 9, 8, 7);
-    Mokinys mok1; mok1=mok;
-    assert(mok1.getVardas() == "Vardenis");
-    assert(mok1.getPavarde() == "Pavardenis");
-    assert(mok1.getND() == temp);
-    assert(mok1.getEgzaminas() == 9);
-    assert(mok1.getVID() == 8);
-    assert(mok1.getMED() == 7);
-    cout << "Copy assignment testavimas sekmingas!"<<endl;
+    Mokinys mok1;
+    mok1 = mok;
+    if (mok1.getVardas() == "Vardenis")
+        cout << "Vardas tinkamas!" << endl;
+    else
+        cout << "Vardas netinkamas!" << endl;
+    if (mok1.getPavarde() == "Pavardenis")
+        cout << "Pavarde tinkama!" << endl;
+    else
+        cout << "Pavarde netinkama!" << endl;
+    if (mok1.getND() == temp)
+        cout << "Namu darbai tinkami!" << endl;
+    else
+        cout << "Namu darbai netinkami!" << endl;
+    if (mok1.getEgzaminas() == 9)
+        cout << "Egzaminas tinkamas!" << endl;
+    else
+        cout << "Egzaminas netinkamas!" << endl;
+    if (mok1.getVID() == 8)
+        cout << "Vidurkis tinkamas!" << endl;
+    else
+        cout << "Vidurkis netinkamas!" << endl;
+    if (mok1.getMED() == 7)
+        cout << "Mediana tinkama!" << endl;
+    else
+        cout << "Mediana netinkama!" << endl;
 }
-void testMoveAssignment(){
+void testMoveAssignment()
+{
     deque<int> temp{1, 2, 3, 4};
     Mokinys mok("Vardenis", "Pavardenis", temp, 9, 8, 7);
-    Mokinys mok1; mok1=move(mok);
-    assert(mok1.getVardas() == "Vardenis");
-    assert(mok1.getPavarde() == "Pavardenis");
-    assert(mok1.getND() == temp);
-    assert(mok1.getEgzaminas() == 9);
-    assert(mok1.getVID() == 8);
-    assert(mok1.getMED() == 7);
-    cout << "Move assignment testavimas sekmingas!"<<endl;
+    Mokinys mok1;
+    mok1 = move(mok);
+    if (mok1.getVardas() == "Vardenis")
+        cout << "Vardas tinkamas!" << endl;
+    else
+        cout << "Vardas netinkamas!" << endl;
+    if (mok1.getPavarde() == "Pavardenis")
+        cout << "Pavarde tinkama!" << endl;
+    else
+        cout << "Pavarde netinkama!" << endl;
+    if (mok1.getND() == temp)
+        cout << "Namu darbai tinkami!" << endl;
+    else
+        cout << "Namu darbai netinkami!" << endl;
+    if (mok1.getEgzaminas() == 9)
+        cout << "Egzaminas tinkamas!" << endl;
+    else
+        cout << "Egzaminas netinkamas!" << endl;
+    if (mok1.getVID() == 8)
+        cout << "Vidurkis tinkamas!" << endl;
+    else
+        cout << "Vidurkis netinkamas!" << endl;
+    if (mok1.getMED() == 7)
+        cout << "Mediana tinkama!" << endl;
+    else
+        cout << "Mediana netinkama!" << endl;
 }

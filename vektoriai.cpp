@@ -17,16 +17,41 @@ int main()
 
         cout << "Ar norite istestuoti konstruktorius ir assignment'us?(jei taip, irasykite 't'): " << endl;
         cin >> input4;
-        if(input4 == 't'){
-        testConstructor();
-        testCopyConstructor();
-        testMoveConstructor();
-        testCopyAssignment();
-        testMoveAssignment();
+        if (input4 == 't')
+        {
+            int num;
+            cout << "Ka norite testuoti?" << endl;
+            cout << "testConstructor - 1" << endl;
+            cout << "testCopyConstructor - 2" << endl;
+            cout << "testMoveConstructor - 3" << endl;
+            cout << "testCopyAssignment - 4" << endl;
+            cout << "testMoveAssignment - 5" << endl;
+            cin >> num;
+            if (cin.fail())
+                throw runtime_error("Netinkama ivestis!");
+            switch (num)
+            {
+            case 1:
+                testConstructor();
+                break;
+            case 2:
+                testCopyConstructor();
+                break;
+            case 3:
+                testMoveConstructor();
+                break;
+            case 4:
+                testCopyAssignment();
+                break;
+            case 5:
+                testMoveAssignment();
+                break;
+            }
         }
-        else 
+        else
             throw runtime_error("Netinkama ivestis!");
             
+
         cout << "Norite ivesti ar skaityti is failo?(i/s) " << endl;
         cin >> input;
         if (input == 'i')
@@ -200,37 +225,38 @@ int main()
             cin >> input3;
             if (input3 == 't')
                 GeneruotiFailus(Nuskriaustieji, Mokslinciai, IrasuSk, A);
-            //else if (input3 == 'n')
+            // else if (input3 == 'n')
             //{
-                char kint6, kint7;
-                int kint5;
-                string filename;
+            char kint6, kint7;
+            int kint5;
+            string filename;
 
-                cout << "Norite skaityti naujus ar senus failus?(n/s): " << endl;
-                cin >> kint6;
-                if(kint6 != 'n' && kint6 != 's')
-                    throw runtime_error("Netinkama ivestis!");
+            cout << "Norite skaityti naujus ar senus failus?(n/s): " << endl;
+            cin >> kint6;
+            if (kint6 != 'n' && kint6 != 's')
+                throw runtime_error("Netinkama ivestis!");
 
-                cout << "Iveskite failu skaiciu: "<<endl;
-                cin >> kint5;
-                if(cin.fail())
-                    throw runtime_error("Netinkama ivestis!");
-                
-                cout << "Kuria strategija norite rusiuoti?(1/2/3): " <<endl;
-                cin >> kint7;
-                if(kint7 != '1' && kint7 != '2' && kint7 != '3')
-                    throw runtime_error("Netinkama ivestis!");
+            cout << "Iveskite failu skaiciu: " << endl;
+            cin >> kint5;
+            if (cin.fail())
+                throw runtime_error("Netinkama ivestis!");
 
-                for(int i=0; i<kint5; i++){
-                    if(kint6 == 'n')
-                        filename = "new_file" + to_string(i) + ".txt";
-                    else
-                        filename = "file" + to_string(i) + ".txt";
-                    temp.Skaitymas(Nuskriaustieji, Mokslinciai, IrasuSk, filename, A, i, kint7);
-                }
+            cout << "Kuria strategija norite rusiuoti?(1/2/3): " << endl;
+            cin >> kint7;
+            if (kint7 != '1' && kint7 != '2' && kint7 != '3')
+                throw runtime_error("Netinkama ivestis!");
+
+            for (int i = 0; i < kint5; i++)
+            {
+                if (kint6 == 'n')
+                    filename = "new_file" + to_string(i) + ".txt";
+                else
+                    filename = "file" + to_string(i) + ".txt";
+                temp.Skaitymas(Nuskriaustieji, Mokslinciai, IrasuSk, filename, A, i, kint7);
+            }
             //}
-            //else
-                //throw runtime_error("Netinkama ivestis!");
+            // else
+            // throw runtime_error("Netinkama ivestis!");
             temp.Vidurkis(A);
         }
         else

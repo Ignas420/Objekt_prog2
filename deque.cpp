@@ -13,7 +13,43 @@ int main()
         deque<Mokinys> Mokslinciai;
         deque<Mokinys> Nuskriaustieji;
         string eil;
-        char input, input2, input3;
+        char input, input2, input3, input4;
+
+        cout << "Ar norite istestuoti konstruktorius ir assignment'us?(jei taip, irasykite 't'): " << endl;
+        cin >> input4;
+        if (input4 == 't')
+        {
+            int num;
+            cout << "Ka norite testuoti?" << endl;
+            cout << "testConstructor - 1" << endl;
+            cout << "testCopyConstructor - 2" << endl;
+            cout << "testMoveConstructor - 3" << endl;
+            cout << "testCopyAssignment - 4" << endl;
+            cout << "testMoveAssignment - 5" << endl;
+            cin >> num;
+            if (cin.fail())
+                throw runtime_error("Netinkama ivestis!");
+            switch (num)
+            {
+            case 1:
+                testConstructor();
+                break;
+            case 2:
+                testCopyConstructor();
+                break;
+            case 3:
+                testMoveConstructor();
+                break;
+            case 4:
+                testCopyAssignment();
+                break;
+            case 5:
+                testMoveAssignment();
+                break;
+            }
+        }
+        else
+            throw runtime_error("Netinkama ivestis!");
         
         cout << "Norite ivesti ar skaityti is failo?(i/s) " << endl;
         cin >> input;
